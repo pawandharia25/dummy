@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'dart:ffi';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:demo_1/ride_booked.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geocoding/geocoding.dart';
@@ -169,12 +169,17 @@ class _VehicleSearchPageState extends State<VehicleSearchPage> {
             Padding(
               padding: EdgeInsets.only(
                   top: 30.h, bottom: 30.h, right: 20.w, left: 20.w),
-              child: Container(
-                height: 15.h,
-                width: Get.width.w,
-                decoration: BoxDecoration(
-                    color: Colors.grey.shade400,
-                    borderRadius: BorderRadius.circular(50)),
+              child: InkWell(
+                onTap: () {
+                  Get.to(RiderBokkedPage());
+                },
+                child: Container(
+                  height: 15.h,
+                  width: Get.width.w,
+                  decoration: BoxDecoration(
+                      color: Colors.grey.shade400,
+                      borderRadius: BorderRadius.circular(50)),
+                ),
               ),
             ),
             Row(
